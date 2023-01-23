@@ -14,3 +14,10 @@ Home page:
 Individual movie page:
 
 <img width="572" alt="Screenshot_20230123_022950" src="https://user-images.githubusercontent.com/89886311/214154190-e91a0d8e-2dfc-479e-9138-090f2292e7bb.png">
+
+// aws ec2 assignment
+
+Server's IP address: 3.134.91.39	
+SSH command: ssh -i ~/keypair/260keypair.pem ubuntu@3.134.91.39	
+I have stopped the server for now. When I begin working on it regularly, I will assign it an elastic IP address.
+
