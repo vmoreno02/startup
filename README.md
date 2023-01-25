@@ -26,3 +26,7 @@ I have stopped the server for now. When I begin working on it regularly, I will 
 // aws route 53 assignment
 
 URL: http://ghiblipedia.click
+
+// aws https assignment
+
+URL: https://ghiblipedia.click
