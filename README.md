@@ -23,3 +23,6 @@ SSH command: ssh -i ~/keypair/260keypair.pem ubuntu@18.218.36.221
 
 I have stopped the server for now. When I begin working on it regularly, I will assign it an elastic IP address.
 
+// aws route 53 assignment
+
+URL: http://ghiblipedia.click
