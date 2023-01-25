@@ -17,7 +17,9 @@ Individual movie page:
 
 // aws ec2 assignment
 
-Server's IP address: 3.134.91.39	
-SSH command: ssh -i ~/keypair/260keypair.pem ubuntu@3.134.91.39	
+Server's IP address: 18.218.36.221	
+
+SSH command: ssh -i ~/keypair/260keypair.pem ubuntu@18.218.36.221		
+
 I have stopped the server for now. When I begin working on it regularly, I will assign it an elastic IP address.
 
