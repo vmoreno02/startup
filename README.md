@@ -35,13 +35,13 @@ URL: https://ghiblipedia.click
 
 I have learned a lot about HTML by making my own version of the Simon HTML.
 
-- I realized that the <p> tag will add an extra blank line at the end, so if you don't want the line break, you have to do <div><span>.
+- I realized that the &lt;p&gt; tag will add an extra blank line at the end, so if you don't want the line break, you have to do &lt;div&gt;&lt;span&gt;.
 
 - &lt;hr &sol;&gt; == line break, &lt;br &sol;&gt; = \n\n
 
 - SVG isn't as scary as it seems.
 
-- &lt; href=link&gt; == link to page
+- &lt;href=link&gt; == link to page
 
 - &lt;tr&gt; == table row, &lt;td&gt; == table cell
 
