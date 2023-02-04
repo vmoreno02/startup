@@ -30,3 +30,19 @@ URL: http://ghiblipedia.click
 // aws https assignment
 
 URL: https://ghiblipedia.click
+
+// simon html assignment
+
+I have learned a lot about HTML by making my own version of the Simon HTML.
+
+- I realized that the <p> tag will add an extra blank line at the end, so if you don't want the line break, you have to do <div><span>.
+
+- <hr /> == line break, <br /> = \n\n
+
+- SVG isn't as scary as it seems.
+
+- <a href=link> == link to page
+
+- <tr> == table row, <td> == table cell
+
+- The Live Server Extension will save my life in this class.
