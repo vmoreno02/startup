@@ -37,12 +37,12 @@ I have learned a lot about HTML by making my own version of the Simon HTML.
 
 - I realized that the <p> tag will add an extra blank line at the end, so if you don't want the line break, you have to do <div><span>.
 
-- <hr /> == line break, <br /> = \n\n
+- &lt;hr &sol;&gt; == line break, &lt;br &sol;&gt; = \n\n
 
 - SVG isn't as scary as it seems.
 
-- <a href=link> == link to page
+- &lt; href=link&gt; == link to page
 
-- <tr> == table row, <td> == table cell
+- &lt;tr&gt; == table row, &lt;td&gt; == table cell
 
 - The Live Server Extension will save my life in this class.
