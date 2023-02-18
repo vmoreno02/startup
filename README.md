@@ -46,3 +46,7 @@ I have learned a lot about HTML by making my own version of the Simon HTML.
 - &lt;tr&gt; == table row, &lt;td&gt; == table cell
 
 - The Live Server Extension will save my life in this class.
+
+// simon css
+
+I feel much more confident in using both normal CSS and Bootstrap commands. It seems easy enough to look through the list of Bootstrap elements and pick the ones I want, and I already have ideas of what I want to do with my startup website. Normal CSS is more complicated, but I have a better idea of how to make things curve and stay where I want them.
