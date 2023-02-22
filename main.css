@@ -27,6 +27,8 @@ footer {
     flex: 0 30px;
 }
 
+
+
 menu {
     flex: 1;
     display: flex;
@@ -48,13 +50,24 @@ menu li {
 }
 
 .input-group {
-    float: right !important;
+    align-self: flex-end;
+    height: 40px;
+}
+
+#searchbaroutline {
+    width: 200px;
 }
 
 .title-card {
     font-family: 'Shantell Sans';
+    margin: 1rem 1rem;
+    border: thick solid lightgreen;
+    border-radius: 0.25rem;
 }
 
-#loginbutton {
-    color: slategray;
+.searchbutton {
+    width: 70px !important;
+    border-radius: 0.25rem;
+    background-color: #00adef;
+    border: none;
 }
