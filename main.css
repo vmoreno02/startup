@@ -8,6 +8,7 @@ body {
 
 header {
     flex: 0 80px;
+    background-color: white;
 }
 
 section {
@@ -68,7 +69,6 @@ menu li {
 
 .title-title {
     color: white;
-    font-family: 'Indie Flower';
 }
 
 .title-description {
