@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Mynerve&family=Shantell+Sans:ital@1&family=Source+Code+Pro&family=Ubuntu&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Indie+Flower&family=Mynerve&family=Shantell+Sans:ital@1&family=Source+Code+Pro&family=Ubuntu&display=swap');
 
 body {
     display: flex;
@@ -20,7 +20,7 @@ section {
 }
 
 form {
-    font-family: 'Shantell Sans';
+    font-family: 'Indie Flower';
 }
 
 footer {
@@ -59,7 +59,7 @@ menu li {
 }
 
 .title-card {
-    font-family: 'Shantell Sans';
+    font-family: 'Indie Flower';
     margin: 1rem 0;
     border-radius: 0.25rem;
 
@@ -68,6 +68,7 @@ menu li {
 
 .title-title {
     color: white;
+    font-family: 'Indie Flower';
 }
 
 .title-description {
