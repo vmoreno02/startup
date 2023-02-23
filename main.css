@@ -81,3 +81,21 @@ menu li {
     background-color: #00adef;
     border: none;
 }
+
+.cardrow {
+    margin: 2rem;
+    border-radius: 0.25rem;
+    border: thin solid gray;
+    background-color: pink;
+}
+
+.subheader {
+    margin: 2rem;
+    text-align: center;
+    font-family: "Ubuntu";
+}
+
+.card {
+    width: 300px;
+    margin: 2rem;
+}
