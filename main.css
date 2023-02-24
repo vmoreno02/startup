@@ -99,3 +99,12 @@ menu li {
     width: 300px;
     margin: 2rem;
 }
+
+.profile-button {
+    box-shadow: none;
+    border: none;
+}
+
+.list-group {
+    width: 300px;
+}
