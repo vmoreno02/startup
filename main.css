@@ -26,6 +26,7 @@ form {
 
 footer {
     flex: 0 30px;
+    padding-top: 1rem;
 }
 
 
@@ -107,4 +108,25 @@ menu li {
 
 .list-group {
     width: 300px;
+}
+
+.stat-box {
+    margin: 1rem;
+    border: thin solid slategray;
+    border-radius: 0.25rem;
+    font-family: 'Indie Flower';
+}
+
+.stat-box h4 {
+    font-family: 'Ubuntu';
+}
+
+.wiki-text {
+    font-family: 'Ubuntu';
+    padding: 1rem;
+    border-top: thin solid gray;
+}
+
+.wiki-text h4 {
+    color: cornflowerblue;
 }
