@@ -54,3 +54,12 @@ I feel much more confident in using both normal CSS and Bootstrap commands. It s
 // startup html and css
 
 I now am much more confident in using HTML, CSS, and Bootstrap. I'm pleased with how my website looks, though in the future I may add more photos and styling. I also may add more text to certain pages; I'm just really tired of typing right now and I may have bitten off more than I can chew. I've learned how to organize things in rows, when to use Bootstrap and when to make items from scratch, how to incorporate fonts, colors, and images into my work, and how to make a sticky header.
+
+// DOM
+
+- get class : const list = document.querySelectorAll('p');
+- add: appendChild or append
+- get id: querySelector or getElementById
+- remove: while x.firstChild { x.removeChild(x.firstChild) }
+- Can inject straight html: el.innerHTML = "line of html"
+- event listener: el.addEventListener('click', function (event))
