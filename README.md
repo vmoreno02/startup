@@ -50,3 +50,7 @@ I have learned a lot about HTML by making my own version of the Simon HTML.
 // simon css
 
 I feel much more confident in using both normal CSS and Bootstrap commands. It seems easy enough to look through the list of Bootstrap elements and pick the ones I want, and I already have ideas of what I want to do with my startup website. Normal CSS is more complicated, but I have a better idea of how to make things curve and stay where I want them.
+
+// startup html and css
+
+I now am much more confident in using HTML, CSS, and Bootstrap. I'm pleased with how my website looks, though in the future I may add more photos and styling. I also may add more text to certain pages; I'm just really tired of typing right now and I may have bitten off more than I can chew. I've learned how to organize things in rows, when to use Bootstrap and when to make items from scratch, how to incorporate fonts, colors, and images into my work, and how to make a sticky header.
