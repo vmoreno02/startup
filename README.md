@@ -63,3 +63,8 @@ I now am much more confident in using HTML, CSS, and Bootstrap. I'm pleased with
 - remove: while x.firstChild { x.removeChild(x.firstChild) }
 - Can inject straight html: el.innerHTML = "line of html"
 - event listener: el.addEventListener('click', function (event))
+
+// simon javascript
+
+I see just how useful promises and async/await can be in a practical application, and 
+think I finally get how to use Javascript in tandem with HTML to make a functioning website.
