@@ -87,6 +87,12 @@
             </div>
         </div>
 
+        <!--like button-->
+        <div class="form-check like-check">
+            <input type="checkbox" class="btn-check" id="btn-check" autocomplete="off" onclick="changeFavorites(this, 'Spirited Away')">
+            <label class="btn btn-outline-secondary like-label" id="like-label" for="btn-check">Favorite</label>
+        </div>
+
         <!--info from ghibli.fandom.com-->
         <!--summary-->
         <div class="wiki-text">
@@ -345,6 +351,7 @@
         </div>
     </footer>
 
+    <script src="https://code.jquery.com/jquery-2.2.3.min.js"></script>
     <script src="javascript/search.js"></script>
     <script src="javascript/favorite.js"></script>
 </html>

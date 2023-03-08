@@ -29,8 +29,6 @@ footer {
     padding-top: 1rem;
 }
 
-
-
 menu {
     flex: 1;
     display: flex;
@@ -133,4 +131,13 @@ menu li {
 
 .results-list li {
     border: thin solid slategray;
+}
+
+.form-check {
+    align-self: center;
+    padding-bottom: 1rem;
+}
+
+.like-check {
+    font-family: 'Mynerve';
 }
