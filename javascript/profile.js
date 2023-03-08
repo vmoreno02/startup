@@ -8,12 +8,12 @@ function saveProfile() {
     const name = document.querySelector("#profile-username-set");
     const pass = document.querySelector("#profile-password-set");
     
-    if (name && name.value) {
+    if (name && name.value.trim().length) {
         localStorage.setItem("username", name.value);
         setName();
     }
 
-    if (pass && pass.value) {
+    if (pass && pass.value.trim().length) {
         localStorage.setItem("password", pass.value);
     }
 }

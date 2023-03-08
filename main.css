@@ -106,7 +106,7 @@ menu li {
     border: none;
 }
 
-.list-group {
+.p-1.list-group {
     width: 300px;
 }
 
@@ -129,4 +129,8 @@ menu li {
 
 .wiki-text h4 {
     color: cornflowerblue;
+}
+
+.results-list li {
+    border: thin solid slategray;
 }
