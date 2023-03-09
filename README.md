@@ -60,6 +60,10 @@ I now am much more confident in using HTML, CSS, and Bootstrap. I'm pleased with
 I see just how useful promises and async/await can be in a practical application, and 
 think I finally get how to use Javascript in tandem with HTML to make a functioning website.
 
+// startup javascript
+
+Whew, this was a doozy of an assignment. I think I've finally got the hang of event listeners and using the DOM. It took me a while to figure out that I can use the same ID in different files. I ended up using local storage more than I thought I would, but that will probably change once we start using external databases. The trickiest part was using local storage to remember which favorite checkboxes were checked and displaying them as such.
+
 
 ----------------NOTES----------------
 
