@@ -97,10 +97,12 @@ function loadState(movie) {
   if (cb) {
     btn.classList.remove('btn-outline-secondary');
     btn.classList.add('btn-success');
+    document.getElementById('btn-check').checked = true;
   }
   else {
     btn.classList.add('btn-outline-secondary');
     btn.classList.remove('btn-success');
+    document.getElementById('btn-check').checked = false;
   }
 }
 

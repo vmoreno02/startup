@@ -17,7 +17,7 @@
         />
     </head>
 
-    <body class="bg-light text-dark" >
+    <body class="bg-light text-dark" onload="loadState('Castle in the Sky')">
         <header class="container-fluid border-bottom"  id="header" >
             <nav class="navbar sticky-top fixed-top navbar-light" id="nav">
                 <a class="navbar-brand" href="#">Ghiblipedia</a>
@@ -85,6 +85,12 @@
                     </div>
                 </div>
             </div>
+        </div>
+
+        <!--like button-->
+        <div class="form-check like-check">
+            <input type="checkbox" class="btn-check" id="btn-check" autocomplete="off" onclick="changeFavorites(this, 'Castle in the Sky')">
+            <label class="btn btn-outline-secondary like-label" id="like-label" for="btn-check">Favorite</label>
         </div>
 
         <!--info from ghibli.fandom.com-->
