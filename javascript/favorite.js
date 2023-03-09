@@ -1,12 +1,26 @@
 function addToFavorites(movie) {
+  debugger
   let faves = [];
   const favesText = localStorage.getItem('faves');
   if (favesText) {
     faves = JSON.parse(favesText);
   }
-  const newFave = {title: movie};
-  faves.push(newFave);
-  localStorage.setItem('faves', JSON.stringify(faves));
+
+  let found = false;
+  for (let i = 0; i < faves.length; i++) {
+    if (faves[i].title === movie) {
+      found = true;
+      break;
+    }
+  }
+
+  if (!found) {
+    const newFave = {title: movie};
+    faves.push(newFave);
+    localStorage.setItem('faves', JSON.stringify(faves));
+  }
+
+  saveState(movie, true);
 
   const btn = document.getElementById('like-label');
   btn.classList.remove('btn-outline-secondary');
@@ -29,38 +43,71 @@ function removeFromFavorites(movie) {
 
   localStorage.setItem('faves', JSON.stringify(faves));
 
+  saveState(movie, false);
+
   const btn = document.getElementById('like-label');
   btn.classList.add('btn-outline-secondary');
   btn.classList.remove('btn-success');
 }
 
-function saveState() {
-  var cbstate;
+function saveState(movie, cb) {
+  debugger
+  let cbstate = [];
+  const cbText = localStorage.getItem('cbstate');
+  if (cbText) {
+    cbstate = JSON.parse(cbText);
+  }
 
-  window.addEventListener('load', function() {
-    cbstate = JSON.parse(this.localStorage['checkstate'] || '{}');
-
-    for (var i in cbstate) {
-      var el = document.querySelector('input[id="' + i + '"]');
-      if (el) el.checked = true;
+  let found = false;
+  for (let i = 0; i < cbstate.length; i++) {
+    if (cbstate[i].title === movie) {
+      found = true;
+      cbstate[i].checked = cb;
+      break;
     }
+  }
 
-    let cb = this.document.getElementsByClassName('btn-check');
+  if (!found) {
+    const newCB = {title: movie, checked: cb};
+    cbstate.push(newCB);
+  }
 
-    for(var i = 0; i < cb.length; i++) {
-      cb[i].addEventListener('click', function(evt) {
-        if (this.checked) {
-          cbstate[this.name] = true;
-        }
+  localStorage.setItem('cbstate', JSON.stringify(cbstate));
+}
 
-        else if (cbstate[this.name]) {
-          delete cbstate[this.name];
-        }
+function loadState(movie) {
+  debugger
+  let cbstate = [];
+  const cbText = localStorage.getItem('cbstate');
+  if (cbText) {
+    cbstate = JSON.parse(cbText);
+  }
 
-        localStorage.checkstate = JSON.stringify(cbstate);
-      });
+  let found = false;
+  let cb = false;
+  for (let i = 0; i < cbstate.length; i++) {
+    if (cbstate[i].title === movie) {
+      found = true;
+      cb = cbstate[i].checked;
+      break;
     }
-  });
+  }
+
+  const btn = document.querySelector('.like-label');
+  if (cb) {
+    btn.classList.remove('btn-outline-secondary');
+    btn.classList.add('btn-success');
+  }
+  else {
+    btn.classList.add('btn-outline-secondary');
+    btn.classList.remove('btn-success');
+  }
+}
+
+function clearFavorites() {
+  let list = [];
+  localStorage.setItem('faves', JSON.stringify(list));
+  localStorage.setItem('cbstate', JSON.stringify(list));
 }
 
 function changeFavorites(cb, movie) {
@@ -71,6 +118,6 @@ function changeFavorites(cb, movie) {
   else {
     removeFromFavorites(movie);
   }
-
-  //saveState();
 }
+
+//clearFavorites();
