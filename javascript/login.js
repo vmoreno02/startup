@@ -1,12 +1,26 @@
 function login() {
     const name = document.querySelector("#usernameinput");
-    localStorage.setItem("username", name.value);
-    
     const pass = document.querySelector("#passwordinput");
-    localStorage.setItem("password", pass.value);
-
     const email = document.querySelector("#emailinput");
-    localStorage.setItem("email", email.value);
 
-    window.location.href = "home.html";
+    checkInput(name.value, pass.value, email.value);
+}
+
+function checkInput(name, pass, email) {
+    debugger
+    if (!(name.length) || !(pass.length) || !(email.length)) {
+        const alert = document.getElementById('loginalert');
+        alert.style.visibility = "visible";
+    }
+
+    else {
+        const alert = document.getElementById('loginalert');
+        alert.style.visibility = "hidden";
+
+        localStorage.setItem("username", name);
+        localStorage.setItem("password", pass);
+        localStorage.setItem("email", email);
+
+        window.location.href = "home.html";
+    }
 }

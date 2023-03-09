@@ -141,3 +141,7 @@ menu li {
 .like-check {
     font-family: 'Mynerve';
 }
+
+.alert {
+    visibility: hidden;
+}
