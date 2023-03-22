@@ -64,6 +64,9 @@ think I finally get how to use Javascript in tandem with HTML to make a function
 
 Whew, this was a doozy of an assignment. I think I've finally got the hang of event listeners and using the DOM. It took me a while to figure out that I can use the same ID in different files. I ended up using local storage more than I thought I would, but that will probably change once we start using external databases. The trickiest part was using local storage to remember which favorite checkboxes were checked and displaying them as such.
 
+// simon service
+
+Now that I've actually implemented some functionality, the Node.js/Express/Fetch stuff isn't so intimidating. It's a lot clearer to me now that Express sets stuff up in the background while fetch is used in the .js files to dynamically get and assign content.
 
 ----------------NOTES----------------
 
@@ -260,3 +263,11 @@ Whew, this was a doozy of an assignment. I think I've finally got the hang of ev
     - result = success
     - catch = err
     - finally = always happens
+
+// Node.js
+- Create your project directory
+Initialize it for use with NPM by running npm init -y
+Make sure .gitignore file contains node-modules
+Install any desired packages with npm install &lt;package name here&gt;
+Add require('&lt;package name here&gt;') to your JavaScript code
+Run your code with node main.js
