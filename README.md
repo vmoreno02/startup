@@ -68,6 +68,10 @@ Whew, this was a doozy of an assignment. I think I've finally got the hang of ev
 
 Now that I've actually implemented some functionality, the Node.js/Express/Fetch stuff isn't so intimidating. It's a lot clearer to me now that Express sets stuff up in the background while fetch is used in the .js files to dynamically get and assign content.
 
+// simon db
+
+Using environment variables to hold passwords is a really cool idea. I didn't know you could do that, and it opens a lot of possibilities, though it's not the most secure option ever. The difference between the 'db' variable and the 'collection' variable confused me at first, but I think that collections are like little tables inside the bigger table, so we could also do client.db('simon').collection('bestplays') or something and it would show up in the simon database.
+
 ----------------NOTES----------------
 
 // DNS
