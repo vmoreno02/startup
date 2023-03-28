@@ -72,6 +72,10 @@ Now that I've actually implemented some functionality, the Node.js/Express/Fetch
 
 Using environment variables to hold passwords is a really cool idea. I didn't know you could do that, and it opens a lot of possibilities, though it's not the most secure option ever. The difference between the 'db' variable and the 'collection' variable confused me at first, but I think that collections are like little tables inside the bigger table, so we could also do client.db('simon').collection('bestplays') or something and it would show up in the simon database.
 
+// simon login
+
+I've been stressing over how to do my startup's login function for a while, and it's nice to finally understand how logging in and out works. It's nice that hashing and decrypting passwords can be done automatically and how the code is split between login.js and index.js. The logic of what is required to authenticate and add new and existing users is in logic.js and the actual api calls are in index.js.
+
 ----------------NOTES----------------
 
 // DNS
