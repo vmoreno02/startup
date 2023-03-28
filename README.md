@@ -76,6 +76,10 @@ Using environment variables to hold passwords is a really cool idea. I didn't kn
 
 I've been stressing over how to do my startup's login function for a while, and it's nice to finally understand how logging in and out works. It's nice that hashing and decrypting passwords can be done automatically and how the code is split between login.js and index.js. The logic of what is required to authenticate and add new and existing users is in logic.js and the actual api calls are in index.js.
 
+// simon websocket
+
+The live interaction is a really cool feature. I think with some additional database fanagling, I can easily modify the live chat into a real-time comment section that saves across sessions and loads with the website. I'll likely have to make a separate comment.js file that works similarly to play.js in that it calls the websocket and passes in data while peerProxy.js outlines how the websocket responds.
+
 ----------------NOTES----------------
 
 // DNS
