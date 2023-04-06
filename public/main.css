@@ -145,3 +145,15 @@ menu li {
 .alert {
     visibility: hidden;
 }
+
+.wrapper {
+    border: thin solid cornflowerblue;
+    border-radius: 0.25rem;
+    margin-bottom: 10px;
+    padding: 5px;
+}
+
+.userDiv {
+    background-color: cornflowerblue;
+    padding: 5px;
+}
