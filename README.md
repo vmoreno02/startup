@@ -283,3 +283,19 @@ Make sure .gitignore file contains node-modules
 Install any desired packages with npm install &lt;package name here&gt;
 Add require('&lt;package name here&gt;') to your JavaScript code
 Run your code with node main.js
+
+// React
+- tic tac toe
+    - export: makes function available outside file
+    - default: signals compiler to treat this function as main
+    - component: piece of UI that is reusable; used to render, manage, and update parts of app
+    - prop/property: name or value that allows CSS to style
+    - normally need React and ReactDOM
+    - fragments: &lt;&gt; &lt;/&gt;; wrap multiple components to return one JSX component
+    - put functions inside the html that return more html
+    - pass values into functions with { value }
+    - onClick={function}
+    - state: used to remember things
+    - const [value, setValue] = useState(null);
+    - To collect data from multiple children, or to have two child components communicate with each other, declare the shared state in their parent component instead. The parent component can pass that state back down to the children via props. This keeps the child components in sync with each other and with their parent.
+    - 
