@@ -43,6 +43,7 @@ async function loginOrCreate(endpoint) {
       localStorage.setItem('username', userName);
       window.location.href = 'home.html';
     } else {
+        console.log("in modal");
         const modalEl = document.querySelector('#msgModal');
         modalEl.querySelector('.modal-body').textContent = `⚠ Error: ${body.msg}`;
         const msgModal = new bootstrap.Modal(modalEl, {});

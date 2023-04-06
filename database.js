@@ -15,6 +15,14 @@ const url = `mongodb+srv://${userName}:${password}@${hostname}`;
 const client = new MongoClient(url);
 const favoritesCollection = client.db('ghibli').collection('favorites');
 const userCollection = client.db('ghibli').collection('users');
+const commentCollection = client.db('ghibli').collection('comments')
+
+/* user: {username, passwordHash, email, token} */
+/* favorite: {username, [favorites]} */
+/* comment: {page, [Comment]}
+ * contains the page title and an array full of Comment objects:
+ * {username, comment text}
+*/
 
 // TODO: ensure functions are correct and finish getFavorites
 
@@ -31,20 +39,23 @@ function removeFavorite(favorite) {
 }
 
 function editUsername(oldName, username) {
-  userCollection.updateOne(
-    { username: oldName },
-    { $set: { username: username }}
-  )
+  console.log(oldName);
+  return userCollection.updateOne(
+    { "username": oldName },
+    { $set: { "username": username }}
+  );
 }
 
-function editPassword(username, password) {
-  userCollection.updateOne(
-    { username: username },
-    { $set: { password: password }}
-  )
+async function editPassword(username, password) {
+  const passwordHash = await bcrypt.hash(password, 10);
+
+  return userCollection.updateOne(
+    { "username": username },
+    { $set: { "password": passwordHash }}
+  );
 }
 
-function getFavorites(user) {}
+function getFavorites(username) {}
 
 function getUser(username) {
   return userCollection.findOne({ username: username })

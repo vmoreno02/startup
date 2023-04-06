@@ -68,6 +68,30 @@ apiRouter.get('/user/:username', async (req, res) => {
   res.status(404).send({ msg: 'Unknown' });
 });
 
+// TODO: insert api calls here
+// get: await DB.getFavorites
+// post: await DB.addUser
+
+// ChangeUsername updates the username in the database
+apiRouter.post('/change/username', async (req, res) => {
+  const result = await DB.editUsername(req.body.olduser, req.body.newuser);
+  if (result.modifiedCount > 0) {
+    res.send();
+  }
+
+  else res.status(404).send({ msg: "change username: user not found "});
+});
+
+// ChangePassword updates password in the database
+apiRouter.post('/change/password', async (req, res) => {
+  const result = await DB.editPassword(req.body.username, req.body.newpass);
+  if (result.nModified > 0) {
+    res.status(200).send();
+  }
+
+  res.status(404).send({ msg: "change password: user not found "});
+});
+
 // secureApiRouter verifies credentials for endpoints
 var secureApiRouter = express.Router();
 apiRouter.use(secureApiRouter);
@@ -81,21 +105,6 @@ secureApiRouter.use(async (req, res, next) => {
     res.status(401).send({ msg: 'Unauthorized' });
   }
 });
-
-// TODO: insert api calls here
-// get: await DB.getFavorites
-// post: await DB.addUser
-
-// GetScores
-/*apiRouter.get('/scores', (_req, res) => {
-  res.send(scores);
-});*/
-
-// SubmitScore
-/*apiRouter.post('/score', (req, res) => {
-  scores = updateScores(req.body, scores);
-  res.send(scores);
-});*/
 
 // Default error handler
 app.use(function (err, req, res, next) {

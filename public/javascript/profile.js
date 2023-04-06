@@ -9,12 +9,43 @@ function saveProfile() {
     const pass = document.querySelector("#profile-password-set");
     
     if (name && name.value.trim().length) {
-        localStorage.setItem("username", name.value);
-        setName();
+        updateUsername(name.value);
     }
 
     if (pass && pass.value.trim().length) {
-        localStorage.setItem("password", pass.value);
+        updatePassword(pass.value);
+    }
+}
+
+async function updateUsername(username) {
+    const response = await fetch(`api/change/username`, {
+        method: 'post',
+        body: JSON.stringify({ olduser: localStorage.getItem('username'), newuser: username }),
+        headers: {
+            'Content-type': 'application/json; charset=UTF-8',
+        },
+    });
+  
+    if (response?.status === 200) {
+        localStorage.setItem("username", username);
+        setName();
+    }
+    else {
+        console.log("error in change username");
+    }
+}
+
+async function updatePassword(password) {
+    const response = await fetch(`api/change/password`, {
+        method: 'post',
+        body: JSON.stringify({username: localStorage.getItem('username'), newpass: password}),
+        headers: {
+            'Content-type': 'application/json; charset=UTF-8',
+        },
+    });
+
+    if (response?.status !== 200) {
+        console.log("error in change password");
     }
 }
 
