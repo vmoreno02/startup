@@ -1,9 +1,8 @@
-# startup
-BYU CS 260 startup application
+# BYU CS 260 startup application
 
 I now have experience in the terminal and VSCode when it comes to Github.
 
-// startup spec assignment
+### Startup spec assignment
 
 My startup will be a small wiki, akin to wikis on fandom.com, but limited to Studio Ghibli movies. Different movies will have different pages. Users can log in, mark pages as favorites, and interact with other users in the comment sections on pages. Pages will contain photos from the movies and links to other pages (at minimum, which movie on the wiki was released before/after the current movie). Extra features that I may implement if I have time are quizzes and a random page selector.
 
@@ -15,7 +14,7 @@ Individual movie page:
 
 <img width="572" alt="Screenshot_20230123_022950" src="https://user-images.githubusercontent.com/89886311/214154190-e91a0d8e-2dfc-479e-9138-090f2292e7bb.png">
 
-// aws ec2 assignment
+### AWS EC2 assignment
 
 Server's IP address: 18.218.36.221	
 
@@ -23,15 +22,15 @@ SSH command: ssh -i ~/keypair/260keypair.pem ubuntu@18.218.36.221
 
 I have stopped the server for now. When I begin working on it regularly, I will assign it an elastic IP address.
 
-// aws route 53 assignment
+### Route 53 assignment
 
 URL: http://ghiblipedia.click
 
-// aws https assignment
+### AWS HTTPS assignment
 
 URL: https://ghiblipedia.click
 
-// simon html assignment
+### Simon HTML assignment
 
 I have learned a lot about HTML by making my own version of the Simon HTML.
 
@@ -47,40 +46,44 @@ I have learned a lot about HTML by making my own version of the Simon HTML.
 
 - The Live Server Extension will save my life in this class.
 
-// simon css
+### Simon CSS
 
 I feel much more confident in using both normal CSS and Bootstrap commands. It seems easy enough to look through the list of Bootstrap elements and pick the ones I want, and I already have ideas of what I want to do with my startup website. Normal CSS is more complicated, but I have a better idea of how to make things curve and stay where I want them.
 
-// startup html and css
+### Startup HTML and CSS
 
 I now am much more confident in using HTML, CSS, and Bootstrap. I'm pleased with how my website looks, though in the future I may add more photos and styling. I also may add more text to certain pages; I'm just really tired of typing right now and I may have bitten off more than I can chew. I've learned how to organize things in rows, when to use Bootstrap and when to make items from scratch, how to incorporate fonts, colors, and images into my work, and how to make a sticky header.
 
-// simon javascript
+### Simon Javascript
 
 I see just how useful promises and async/await can be in a practical application, and 
 think I finally get how to use Javascript in tandem with HTML to make a functioning website.
 
-// startup javascript
+### Startup Javascript
 
 Whew, this was a doozy of an assignment. I think I've finally got the hang of event listeners and using the DOM. It took me a while to figure out that I can use the same ID in different files. I ended up using local storage more than I thought I would, but that will probably change once we start using external databases. The trickiest part was using local storage to remember which favorite checkboxes were checked and displaying them as such.
 
-// simon service
+### Simon service
 
 Now that I've actually implemented some functionality, the Node.js/Express/Fetch stuff isn't so intimidating. It's a lot clearer to me now that Express sets stuff up in the background while fetch is used in the .js files to dynamically get and assign content.
 
-// simon db
+### Simon db
 
 Using environment variables to hold passwords is a really cool idea. I didn't know you could do that, and it opens a lot of possibilities, though it's not the most secure option ever. The difference between the 'db' variable and the 'collection' variable confused me at first, but I think that collections are like little tables inside the bigger table, so we could also do client.db('simon').collection('bestplays') or something and it would show up in the simon database.
 
-// simon login
+### Simon login
 
 I've been stressing over how to do my startup's login function for a while, and it's nice to finally understand how logging in and out works. It's nice that hashing and decrypting passwords can be done automatically and how the code is split between login.js and index.js. The logic of what is required to authenticate and add new and existing users is in logic.js and the actual api calls are in index.js.
 
-// simon websocket
+### Simon websocket
 
 The live interaction is a really cool feature. I think with some additional database fanagling, I can easily modify the live chat into a real-time comment section that saves across sessions and loads with the website. I'll likely have to make a separate comment.js file that works similarly to play.js in that it calls the websocket and passes in data while peerProxy.js outlines how the websocket responds.
 
-----------------NOTES----------------
+### Simon React
+
+Now that I've seen a fully-functioning React app in action, I think it's better than the old way of doing it. I just have to download all the React framework, change a bit of terminology, and add the routes in app.jsx. The rest of my code will basically be copy-pasted.
+
+## ----------------NOTES----------------
 
 // DNS
 - domain name system
