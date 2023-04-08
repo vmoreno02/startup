@@ -72,6 +72,50 @@ apiRouter.get('/user/:username', async (req, res) => {
 // get: await DB.getFavorites
 // post: await DB.addUser
 
+// AddFavorite adds a favorite to a user's favorites list
+apiRouter.post('/favorites/add', async (req, res) => {
+  const faves = await DB.getFavorites(req.body.username);
+  if (faves) {
+    const result = await DB.updateFavorites(req.body.username, req.body.favorite, faves);
+    if (result.modifiedCount > 0) {
+      res.send();
+      return;
+    }
+  }
+
+  else {
+    const result = await DB.addFavorite(req.body.username, req.body.favorite);
+    res.send();
+    return;
+  }
+  res.status(404).send({ msg: 'faves not updated' });
+});
+
+// RemoveFavorites removes a favorite from a user's favorites list
+apiRouter.post('/favorites/remove', async (req, res) => {
+  const faves = await DB.getFavorites(req.body.username);
+  if (faves) {
+    const result = await DB.removeFavorite(req.body.username, req.body.favorite, faves);
+    if (result.modifiedCount > 0) {
+      res.send();
+      return;
+    }
+  }
+
+  res.status(404).send({ msg: 'faves not updated' });
+});
+
+// GetFavorites gets a user's favorites list (returns null if no favorites)
+apiRouter.post('/favorites/get', async (req, res) => {
+  const result = await DB.getFavorites(req.body.username);
+  if (result) {
+    //console.log(result[0]);
+    res.send(result);
+    return;
+  }
+  res.status(404).send({ msg: 'no faves yet' });
+});
+
 // ChangeUsername updates the username in the database
 apiRouter.post('/change/username', async (req, res) => {
   const result = await DB.editUsername(req.body.olduser, req.body.newuser);

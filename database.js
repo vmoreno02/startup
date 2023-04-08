@@ -24,18 +24,33 @@ const commentCollection = client.db('ghibli').collection('comments')
  * {username, comment text}
 */
 
-// TODO: ensure functions are correct and finish getFavorites
-
 function addUser(user) {
-    userCollection.insertOne(user);
+  userCollection.insertOne(user);
 }
 
-function addFavorite(favorite) {
-    favoritesCollection.insertOne(favorite);
+function addFavorite(username, favorite) {
+  let favorites = Array(favorite);
+  return favoritesCollection.insertOne({ username: username, favorites: favorites });
 }
 
-function removeFavorite(favorite) {
-    favoritesCollection.deleteOne(favorite);
+function updateFavorites(username, favorite, favorites) {
+  favorites.push(favorite);
+  return favoritesCollection.updateOne(
+    { "username": username },
+    { $set: { "favorites": favorites }}
+  );
+}
+
+function removeFavorite(username, favorite, favorites) {
+  const index = favorites.indexOf(favorite);
+  if (index > -1) {
+    favorites.splice(index, 1);
+  }
+
+  return favoritesCollection.updateOne(
+    { "username": username },
+    { $set: { "favorites": favorites }}
+  );
 }
 
 function editUsername(oldName, username) {
@@ -55,10 +70,13 @@ async function editPassword(username, password) {
   );
 }
 
-function getFavorites(username) {}
+async function getFavorites(username) {
+  const faves = await favoritesCollection.findOne({ username: username });
+  return faves.favorites;
+}
 
 function getUser(username) {
-  return userCollection.findOne({ username: username })
+  return userCollection.findOne({ username: username });
 }
 
 function getUserByToken(token) {
@@ -98,10 +116,11 @@ module.exports = {
   addUser,
   addFavorite,
   getUser,
-  getFavorites,
   removeFavorite,
   getUserByToken,
   createUser,
   editUsername,
-  editPassword
+  editPassword,
+  getFavorites,
+  updateFavorites
 };

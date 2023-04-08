@@ -49,27 +49,29 @@ async function updatePassword(password) {
     }
 }
 
-function loadFavorites() {
+async function loadFavorites() {
     debugger
     const list = document.querySelector("#favorites");
     while (list.firstChild) {
         list.removeChild(list.firstChild);
     }
     
-    let faves = [];
-
-    const favesText = localStorage.getItem('faves');
-    if (favesText) {
-        faves = JSON.parse(favesText);
-    }
+    const response = await fetch(`api/favorites/get`, {
+        method: "post",
+        body: JSON.stringify({ username: localStorage.getItem('username') }),
+        headers: {
+            'Content-type': 'application/json; charset=UTF-8',
+        },
+      });  
+    const faves = await response.json();
 
     if (faves.length) {
-        for (const movie of faves.entries()) {
+        for (let i = 0; i < faves.length; i++) {
             const item = document.createElement("li");
             item.classList.add('list-group-item');
             item.classList.add('list-group-item-action');
-            console.log(movie[1]);
-            const text = document.createTextNode(movie[1].title);
+            console.log(faves[i]);
+            const text = document.createTextNode(faves[i]);
 
             item.appendChild(text);
             list.appendChild(item);
