@@ -118,9 +118,13 @@ apiRouter.post('/favorites/get', async (req, res) => {
 
 // ChangeUsername updates the username in the database
 apiRouter.post('/change/username', async (req, res) => {
+  const result1 = await DB.changeFavoriteUsername(req.body.olduser, req.body.newuser);
   const result = await DB.editUsername(req.body.olduser, req.body.newuser);
   if (result.modifiedCount > 0) {
-    res.send();
+    const result1 = await DB.changeFavoriteUsername(req.body.olduser, req.body.newuser);
+    if (result1.modifiedCount > 0) {
+      res.send();
+    }
   }
 
   else res.status(404).send({ msg: "change username: user not found "});

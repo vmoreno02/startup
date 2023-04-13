@@ -75,6 +75,13 @@ async function getFavorites(username) {
   return faves.favorites;
 }
 
+function changeFavoriteUsername(oldUser, username) {
+  return favoritesCollection.updateOne(
+    { "username": oldUser },
+    { $set: { "username": username}}
+  );
+}
+
 function getUser(username) {
   return userCollection.findOne({ username: username });
 }
@@ -98,20 +105,6 @@ async function createUser(username, email, password) {
   return user;
 }
 
-/*function addScore(score) {
-  scoreCollection.insertOne(score);
-}
-
-function getHighScores() {
-  const query = {score: {$gt: 0}};
-  const options = {
-    sort: {score: -1},
-    limit: 10,
-  };
-  const cursor = scoreCollection.find(query, options);
-  return cursor.toArray();
-}*/
-
 module.exports = {
   addUser,
   addFavorite,
@@ -122,5 +115,6 @@ module.exports = {
   editUsername,
   editPassword,
   getFavorites,
-  updateFavorites
+  updateFavorites,
+  changeFavoriteUsername
 };
