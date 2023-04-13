@@ -72,6 +72,37 @@ apiRouter.get('/user/:username', async (req, res) => {
 // get: await DB.getFavorites
 // post: await DB.addUser
 
+// AddComment adds a comment to a page's list
+apiRouter.post('/comments/add', async (req, res) => {
+  const comments = await DB.getComments(req.body.page);
+  if (comments) {
+    const result = await DB.updateComments(req.body.page, req.body.comment, comments);
+    if (result.modifiedCount > 0) {
+      res.send();
+      return;
+    }
+  }
+
+  else {
+    const result = await DB.addComments(req.body.page, req.body.comment);
+    res.send();
+    return;
+  }
+
+  res.status(404).send({ msg: 'comments not updated' });
+});
+
+// GetComments fetches the comments for a page
+apiRouter.post('/comments/get', async (req, res) => {
+  const comments = await DB.getComments(req.body.page);
+  if (comments) {
+    res.send(comments);
+    return;
+  }
+
+  res.status(404).send({ msg: 'no comments yet' });
+});
+
 // AddFavorite adds a favorite to a user's favorites list
 apiRouter.post('/favorites/add', async (req, res) => {
   const faves = await DB.getFavorites(req.body.username);

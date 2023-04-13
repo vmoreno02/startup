@@ -105,6 +105,24 @@ async function createUser(username, email, password) {
   return user;
 }
 
+function addComments(page, comment) {
+  let comments = Array(comment);
+  return commentCollection.insertOne({ page: page, comments: comments });
+}
+
+function updateComments(page, comment, comments) {
+  comments.push(comment);
+  return commentCollection.updateOne(
+    { "page": page },
+    { $set: { "comments": comments}}
+  );
+}
+
+async function getComments(page) {
+  const com = await commentCollection.findOne({ page: page });
+  return com.comments;
+}
+
 module.exports = {
   addUser,
   addFavorite,
@@ -116,5 +134,8 @@ module.exports = {
   editPassword,
   getFavorites,
   updateFavorites,
-  changeFavoriteUsername
+  changeFavoriteUsername,
+  addComments,
+  updateComments,
+  getComments
 };
