@@ -157,3 +157,12 @@ menu li {
     background-color: cornflowerblue;
     padding: 5px;
 }
+
+#homecontrols {
+    font-family: 'Indie Flower';
+    font-size: x-large;
+    align-self: center;
+    align-items: center;
+    margin-top: 20px;
+    margin-bottom: 30px;
+}

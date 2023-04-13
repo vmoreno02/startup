@@ -7,6 +7,15 @@
       const user = await getUser(nameEl.value);
       authenticated = user?.authenticated;
     }
+
+    if (authenticated) {
+        document.querySelector('#username').textContent = `Welcome back, ${userName}`;
+        setDisplay('logincontrols', 'none');
+        setDisplay('homecontrols', 'block');
+      } else {
+        setDisplay('logincontrols', 'block');
+        setDisplay('homecontrols', 'none');
+      }
 })();
 
 async function login() {
@@ -64,6 +73,21 @@ async function getUser(username) {
     }
 
     return null;
+}
+
+function home() {
+    window.location.href = 'home.html';
+}
+
+function profile() {
+    window.location.href = 'profile.html';
+}
+
+function setDisplay(controlId, display) {
+    const homeControlEl = document.querySelector(`#${controlId}`);
+    if (homeControlEl) {
+      homeControlEl.style.display = display;
+    }
 }
   
 
