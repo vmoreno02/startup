@@ -60,12 +60,6 @@ async function loginOrCreate(endpoint) {
     }
 }
 
-function logout() {
-    fetch(`/api/auth/logout`, {
-      method: 'delete',
-    }).then(() => (window.location.href = '/'));
-}
-
 async function getUser(username) {
     const response = await fetch(`/api/user/${username}`);
     if (response.status === 200) {

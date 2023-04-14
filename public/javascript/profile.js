@@ -4,6 +4,12 @@ function setName() {
     nameEl.textContent = name;
 }
 
+function logout() {
+    fetch(`/api/auth/logout`, {
+      method: 'delete',
+    }).then(() => (window.location.href = 'index.html'));
+}
+
 function saveProfile() {
     const name = document.querySelector("#profile-username-set");
     const pass = document.querySelector("#profile-password-set");
