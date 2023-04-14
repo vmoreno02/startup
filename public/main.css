@@ -166,3 +166,18 @@ menu li {
     margin-top: 20px;
     margin-bottom: 30px;
 }
+
+#messages {
+    margin-bottom: 10px;
+    margin-right: 8px;
+    margin-left: 8px;
+    font-family: 'Ubuntu';
+}
+
+.add-event {
+    color: forestgreen;
+}
+
+.remove-event {
+    color: lightcoral;
+}

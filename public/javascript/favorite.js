@@ -1,3 +1,10 @@
+// event for websocket
+const addFave = "addFave";
+const removeFave = "removeFave";
+let socket;
+let socket_size = 0;
+configureWebSocket();
+
 async function addToFavorites(movie) {
   const response = await fetch(`api/favorites/add`, {
     method: "post",
@@ -17,7 +24,7 @@ async function addToFavorites(movie) {
     console.log(response.msg);
   }
 
-  
+  broadcastEvent(localStorage.getItem('username'), addFave, movie);
 }
 
 async function removeFromFavorites(movie) {
@@ -39,31 +46,7 @@ async function removeFromFavorites(movie) {
     console.log(response.msg);
   }
 
-}
-
-function saveState(movie, cb) {
-  debugger
-  let cbstate = [];
-  const cbText = localStorage.getItem('cbstate');
-  if (cbText) {
-    cbstate = JSON.parse(cbText);
-  }
-
-  let found = false;
-  for (let i = 0; i < cbstate.length; i++) {
-    if (cbstate[i].title === movie) {
-      found = true;
-      cbstate[i].checked = cb;
-      break;
-    }
-  }
-
-  if (!found) {
-    const newCB = {title: movie, checked: cb};
-    cbstate.push(newCB);
-  }
-
-  localStorage.setItem('cbstate', JSON.stringify(cbstate));
+  broadcastEvent(localStorage.getItem('username'), removeFave, movie);
 }
 
 async function loadState(movie) {
@@ -91,12 +74,6 @@ async function loadState(movie) {
   }
 }
 
-function clearFavorites() {
-  let list = [];
-  localStorage.setItem('faves', JSON.stringify(list));
-  localStorage.setItem('cbstate', JSON.stringify(list));
-}
-
 function changeFavorites(cb, movie) {
   if (cb.checked) {
     addToFavorites(movie);
@@ -107,4 +84,46 @@ function changeFavorites(cb, movie) {
   }
 }
 
-//clearFavorites();
+// Functionality for peer communication using WebSocket
+
+function configureWebSocket() {
+  const protocol = window.location.protocol === 'http:' ? 'ws' : 'wss';
+  socket = new WebSocket(`${protocol}://${window.location.host}/ws`);
+  socket.onopen = (event) => {
+    displayMsg('system', 'page', 'connected');
+  };
+  socket.onclose = (event) => {
+    displayMsg('system', 'page', 'disconnected');
+  };
+  socket.onmessage = async (event) => {
+    const msg = JSON.parse(await event.data.text());
+    if (msg.type === addFave) {
+      displayMsg('add', msg.from, `added ${msg.value}`);
+    } else if (msg.type === removeFave) {
+      displayMsg('remove', msg.from, `removed ${msg.value}`);
+    }
+  };
+}
+
+function displayMsg(cls, from, msg) {
+  const chatText = document.querySelector('#messages');
+  if (socket_size >= 5) {
+    socket_size = 1;
+    chatText.innerHTML =
+      `<div class="event"><span class="${cls}-event">${from}</span> ${msg}</div>` ;
+  }
+  else {
+    socket_size += 1;
+    chatText.innerHTML =
+        `<div class="event"><span class="${cls}-event">${from}</span> ${msg}</div>` + chatText.innerHTML;
+  }
+}
+
+function broadcastEvent(from, type, value) {
+  const event = {
+    from: from,
+    type: type,
+    value: value,
+  };
+  socket.send(JSON.stringify(event));
+}
