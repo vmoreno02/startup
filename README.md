@@ -83,6 +83,10 @@ The live interaction is a really cool feature. I think with some additional data
 
 Now that I've seen a fully-functioning React app in action, I think it's better than the old way of doing it. I just have to download all the React framework, change a bit of terminology, and add the routes in app.jsx. The rest of my code will basically be copy-pasted.
 
+### Startup Service
+
+Wow, this one was a doozy! It took a while, but I figured out how to use the updateOne function for MongoDB. I also figured out how to store the comments and favorites in an array in Mongo. This was definitely the most difficult startup assignment, but I've figured out Mongo, Express, authentication, and WebSocket, so I'd say the work was worth it. Eventually, I'd like to go back and edit a few things (look and feel of the comment section, popping off only one websocket comment at a time, etc), but unfortunately, I don't have time right now.
+
 ## ----------------NOTES----------------
 
 // DNS
