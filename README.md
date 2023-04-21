@@ -283,15 +283,63 @@ Wow, this one was a doozy! It took a while, but I figured out how to use the upd
     - catch = err
     - finally = always happens
 
+// URL
+- Uniform Resource Locator
+- https: scheme, usually https
+- byu.edu: domain name, owns resource
+- 3000: port
+- /school/byu/etc: path, path to resource on the domain, can include endpoint params
+- filter=names&highlight=intro,summary: parameters
+- #summary: anchor, sublocation in resource
+- URN: unique resource name, no location info
+- URI: unique resource identifier, URL or URN
+
+// SOP and CORS
+- SOP: same origin policy, only allows javascript to make a request to a domain if it's the same domain that the user is currently viewing
+- CORS: cross origin resource sharing, safely violate SOP, specify what origins are allowed
+
+// Fetch
+- make http requests to a third-party service
+- takes a url and returns an asynchronous promise
+
+- REST: representational state transfer, always act upon a resource
+
 // Node.js
+- deploy javascript outside a browser
 - Create your project directory
-Initialize it for use with NPM by running npm init -y
-Make sure .gitignore file contains node-modules
-Install any desired packages with npm install &lt;package name here&gt;
-Add require('&lt;package name here&gt;') to your JavaScript code
-Run your code with node main.js
+- Initialize it for use with NPM by running npm init -y
+- Make sure .gitignore file contains node-modules
+- Install any desired packages with npm install &lt;package name here&gt;
+- Add require('&lt;package name here&gt;') to your JavaScript code
+- Run your code with node main.js
+
+// Express
+- makes using http with node much easier
+- supports all http verbs as functions where you can define what to do with request and result
+- app.use: uses middleware
+
+// PM2
+- daemon: keeps a program running after shutdown
+- process manager 2
+
+// Mongo
+- no strict schema requirements
+- some fields can be missing
+- set username, password, and hostname as envvar
+
+// Authorization
+- generate token with uuid
+- encrypt passwords with bcrypt
+
+// Websocket
+- fully duplexed, any party can efficiently send data at any time
 
 // React
+- makes reactive web page components that automatically update based on user interactions or changes in underlying data
+- abstracts html into a javascript variate called jsx
+- React.createElement generates DOM elements
+monitors props and state objects
+- updates happen asynchronously
 - tic tac toe
     - export: makes function available outside file
     - default: signals compiler to treat this function as main
@@ -305,4 +353,36 @@ Run your code with node main.js
     - state: used to remember things
     - const [value, setValue] = useState(null);
     - To collect data from multiple children, or to have two child components communicate with each other, declare the shared state in their parent component instead. The parent component can pass that state back down to the children via props. This keeps the child components in sync with each other and with their parent.
-    - 
+- hooks: like useState
+- allow react functions style components to do everything class style components can do and more
+- toolchain: abstracts away some complexity
+- github is on the toolchain
+- router: defines the routs a user can take through the app and manipulates the DOM to display the appropriate components
+
+// Security
+- common hacking techniques: injection, cross site scripting, denial of service, credential stuffing, social engineering
+- ways to avoid: sanitize input data, logging, traps, education, reduce attack surfaces, layered security, least required access policy, safeguard credentials, public review
+
+// Typescript
+- static type checking for javascript
+- function inc(value: number)
+- define types for object properties and react function style components
+- can make interfaces
+- null pointer checking
+- states: type AuthState = 'unknown' | 'authenticated' | 'unauthenticated';
+- function square(n: number | string)
+
+// Performance monitoring
+- want everything to load in 1 second or less
+- browser app latency: speed of user device, amount of data that needs to be processed, and time complexity of processing algorithm
+- basically time taken to load index.html with all js/service calls
+- compress files, reduce quality of images and video, minify js and css, use http2 or http3
+- network latency: amount of data you send, amount of data user can receive per second, distance data has to travel
+- avoid making unnecessary or large requests
+- host app files in data centers all around the world
+- service endpoint latency: number of requests to service endpoints
+- number or requests and time to process each request
+
+// Search engine optimization
+- content, authoritative lilnks, metadata, structure and organization, performance and usability
+- customize in robots.txt
